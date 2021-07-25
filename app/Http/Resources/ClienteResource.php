@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class ClienteResource extends ResourceCollection
+class ClienteResource extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,6 +14,14 @@ class ClienteResource extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'nome_completo' => $this->nome_completo,
+            'cpf_ou_cnpj' => $this->cpf_ou_cnpj,
+            'email' => $this->email,
+            'endereco' => new EnderecoResource($this->endereco),
+            'observacoes' => $this->observacoes,
+            'created_at' => date('d/m/Y', strtotime($this->created_at)),
+        ];
     }
 }

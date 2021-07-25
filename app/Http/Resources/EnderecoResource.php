@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class EnderecoResource extends ResourceCollection
+class EnderecoResource extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,6 +14,13 @@ class EnderecoResource extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'cep' => $this->cep,
+            'logradouro' => $this->logradouro,
+            'numero' => $this->numero,
+            'bairro' => $this->bairro,
+            'cidade' => $this->cidade,
+            'estado' => $this->estado
+        ];
     }
 }

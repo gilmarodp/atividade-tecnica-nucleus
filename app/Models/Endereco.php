@@ -9,9 +9,11 @@ class Endereco extends Model
 {
     use HasFactory;
 
-    protected $table = 'clientes';
+    protected $guarded = [];
 
     public $timestamps = true;
+
+    protected $table = 'enderecos';
 
     public function cliente()
     {
