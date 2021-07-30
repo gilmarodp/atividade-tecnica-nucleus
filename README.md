@@ -45,7 +45,7 @@ HTTP e construção das URI's.
 
 ## Como utilizar a API?
 A API desenvolvida é uma API que basicamente é um CRUD
-de Clientes, segue as rotas hospedadas em [https://atividade-tecnica-nucleus.000webhostapp.com](https://atividade-tecnica-nucleus.000webhostapp.com)
+de Clientes, segue as rotas hospedadas em [http://gilmar.tk/](http://gilmar.tk/)
 
 Segue as rotas da API desenvolvida
 
