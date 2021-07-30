@@ -1,62 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Atividade Técnica Nucleus
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Objetivo
+Avaliar capacidade técnica do candidato(a) com as tecnologias requeridas pela
+vaga, tais como uso do GIT, framework Laravel, boas práticas e organização de
+código.
 
-## About Laravel
+## Descrição da Atividade
+O candidato deve construir aplicação Fullstack em última versão estável do Laravel,
+para atender aos requisitos especificados.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requisitos
+Requisitos
+1. Criar o projeto Laravel do zero, utilizando a CLI.
+2. Criar API para cadastro de Clientes:
+   1. Criar Cliente
+   2. Campos:
+      1. Nome Completo (Obrigatório)
+      2. CPF/CNPJ (Obrigatório)
+         1. Deve conter validação
+      3. E-mail (Obrigatório)
+         1. Deve conter validação
+      4. Endereço
+         1. CEP (Obrigatório)
+            1. Deve conter validação
+         2. Logradouro (Obrigatório)
+         3. Número (Opcional)
+         4. Complemento (Opcional)
+         5. Bairro (Obrigatório)
+         6. Cidade (Obrigatório)
+         7. Estado (Obrigatório)
+      5. Observações (Opcional)
+3. Listar Todos os Clientes
+4. Listar um Cliente
+5. Atualizar Cliente
+6. Possibilidade de atualizar um ou mais campos da criação do cliente
+7. Excluir Cliente
+8. Exclusão do cliente a partir de ID fornecido
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Observações
+É necessário utilizar as boas práticas ao construir a API, com o uso padronizado dos verbos
+HTTP e construção das URI's.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Como utilizar a API?
+A API desenvolvida é uma API que basicamente é um CRUD
+de Clientes, segue as rotas hospedadas em [https://atividade-tecnica-nucleus.000webhostapp.com](https://atividade-tecnica-nucleus.000webhostapp.com)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Segue as rotas da API desenvolvida
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<table>
+    <tr>
+        <th>Rota</th>
+        <th>Verbo</th>
+        <th>Descrição</th>
+    </tr>
+    <tr>
+        <td>api/clientes</td>
+        <td style="color: green">GET</td>
+        <td>Lista todos os clientes</td>
+    </tr>
+    <tr>
+        <td>api/clientes/{id}</td>
+        <td style="color: green">GET</td>
+        <td>Lista cliente com determinado id</td>
+    </tr>
+    <tr>
+        <td>api/clientes</td>
+        <td style="color: #ff9d00">POST</td>
+        <td>Cadastra cliente</td>
+    </tr>
+    <tr>
+        <td>api/clientes/{id}</td>
+        <td style="color: deepskyblue">PUT</td>
+        <td>Edita cliente com determinado id</td>
+    </tr>
+    <tr>
+        <td>api/clientes/{id}</td>
+        <td style="color: red">DELETE</td>
+        <td>Exclui cliente com determinado id</td>
+    </tr>
+</table>
